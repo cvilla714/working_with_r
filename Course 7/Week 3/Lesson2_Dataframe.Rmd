@@ -37,13 +37,13 @@ Sometimes you will need to generate a data frame directly in `R`. There are a nu
 Here's how this works. First, create a vector of names by inserting four names into this code block between the quotation marks and then run it:
 
 ```{r}
-names <- c("", "", "", "")
+names <- c("Luffy", "Zorro", "Sanji", "Jinbei")
 ```
 
 Then create a vector of ages by adding four ages separated by commas to the code chunk below. Make sure you are inputting numeric values for the ages or you might get an error. 
 
 ```{r}
-age <- c(, , , )
+age <- c(19,21,23,27 )
 ```
 
 With these two vectors, you can create a new data frame called `people`:
@@ -92,22 +92,33 @@ To get more familiar with creating and using data frames, use the code chunks be
 First, create a vector of any five different fruits. You can type directly into the code chunk below; just place your cursor in the box and click to type. Once you have input the fruits you want in your data frame, run the code chunk.
 
 ```{r}
-
+fruits <- c("Banana", "Apple", "Watermelon", "Mango","Tagerine")
 ```
 
 Now, create a new vector with a number representing your own personal rank for each fruit. Give a 1 to the fruit you like the most, and a 5 to the fruit you like the least. Remember, the scores need to be in the same order as the fruit above. So if your favorite fruit is last in the list above, the score `1` needs to be in the last position in the list below. Once you have input your rankings, run the code chunk.
 
 ```{r}
-
+rate_fruits <-c(4,5,3,2,1)
 ```
 
 Finally, combine the two vectors into a data frame. You can call it `fruit_ranks`. Edit the code chunk below and run it to create your data frame.
 
 ```{r}
-
+fruit_ranks <- data.frame(fruits,rate_fruits)
 ```
 
 After you run this code chunk, it will create a data frame with your fruits and rankings.  
+
+
+```{r}
+head(fruit_ranks)
+```
+```{r}
+str(fruit_ranks)
+```
+```{r}
+View(fruit_ranks)
+```
 
 ## Activity Wrap Up
 In this activity, you learned how to create data frames, view them with summary functions like `head()` and `glimpse()`, and then made changes with the `mutate()` function. You can continue practicing these skills by modifying the code chunks in the rmd file, or use this code as a starting point in your own project console. As you explore data frames, consider how they are similar and different to the tables you have worked with in other data analysis tools like spreadsheets and SQL. Data frames are one of the most basic building blocks you will need to work with data in `R`. So understanding how to create and work with data frames is an important first step to analyzing data.  
