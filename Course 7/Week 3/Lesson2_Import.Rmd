@@ -81,7 +81,21 @@ mutate(new_df, total = `adr` / adults)
 Now you can find your own .csv to import! Using the RStudio Cloud interface, import and save the file in the same folder as this R Markdown document. To do this, go to the Files tab in the lower-right console. Then, click the Upload button next to the + New Folder button. This will open a popup to let you browse your computer for a file. Select any .csv file, then click Open. Now, write code in the chunk below to read that data into `R`:
 
 ```{r}
+movies_df <- read_csv("Movie-Data.csv")
 
+```
+```{r}
+head(movies_df)
+```
+
+```{r}
+str(movies_df)
+```
+
+
+
+```{r}
+colnames(movies_df)
 ```
 You can check the solutions document for this activity to check your work.
 
