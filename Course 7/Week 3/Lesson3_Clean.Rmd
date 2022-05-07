@@ -79,7 +79,7 @@ Based on the functions you have used so far, how would you describe your data in
 
 ```{r}
 trimmed_df <- bookings_df %>% 
-  select( , , )
+  select('hotel','is_canceled', 'lead_time' )
 ```
 
 Remember to check the solutions doc if you are having trouble filling out any of these code chunks. 
@@ -91,7 +91,7 @@ Fill in the space to the left of the '=' symbol with the new variable name:
 ```{r}
 trimmed_df %>% 
   select(hotel, is_canceled, lead_time) %>% 
-  rename( = hotel)
+  rename(hotel_type = hotel)
 ```
 
 Another common task is to either split or combine data in different columns. In this example, you can combine the arrival month and year into one column using the unite() function:
@@ -108,7 +108,7 @@ You can also use the`mutate()` function to make changes to your columns. Let's s
 
 ```{r}
 example_df <- bookings_df %>%
-  mutate(guests = )
+  mutate(guests = adults,children,babies )
 
 head(example_df)
 ```
@@ -118,10 +118,14 @@ Great. Now it's time to calculate some summary statistics! Calculate the total n
 ```{r}
 
 example_df <- bookings_df %>%
-
+  summarise(number_canceled = sum(is_canceled),
+    average_lead_time = mean(lead_time))
 
 head(example_df)
 ```
+
+
+
 
 If you are having trouble completing any of the code chunks in these activities, remember that you can reference the RMarkdown documents in the 'Solutions' for help. 
 
